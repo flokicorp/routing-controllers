@@ -24,6 +24,7 @@
     "controllers"
   ],
   "scripts": {
+    "prepare": "npm run build",
     "build": "npm run build:cjs",
     "build:clean": "rimraf build",
     "build:es2015": "tsc --project tsconfig.prod.esm2015.json",
