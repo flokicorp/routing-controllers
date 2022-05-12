@@ -50,7 +50,7 @@ export class MetadataBuilder {
    */
   protected createMiddlewares(classes?: Function[]): MiddlewareMetadata[] {
     const middlewares = !classes
-      ? getMetadataArgsStorage().middlewares
+      ? []
       : getMetadataArgsStorage().filterMiddlewareMetadatasForClasses(classes);
     return middlewares.map(middlewareArgs => new MiddlewareMetadata(middlewareArgs));
   }
@@ -60,7 +60,7 @@ export class MetadataBuilder {
    */
   protected createInterceptors(classes?: Function[]): InterceptorMetadata[] {
     const interceptors = !classes
-      ? getMetadataArgsStorage().interceptors
+      ? []
       : getMetadataArgsStorage().filterInterceptorMetadatasForClasses(classes);
     return interceptors.map(
       interceptorArgs =>
@@ -76,7 +76,7 @@ export class MetadataBuilder {
    */
   protected createControllers(classes?: Function[]): ControllerMetadata[] {
     const controllers = !classes
-      ? getMetadataArgsStorage().controllers
+      ? []
       : getMetadataArgsStorage().filterControllerMetadatasForClasses(classes);
     return controllers.map(controllerArgs => {
       const controller = new ControllerMetadata(controllerArgs);
